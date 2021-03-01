@@ -1,3 +1,18 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.ui.screens.dog
 
 import androidx.compose.animation.AnimatedVisibility
@@ -226,7 +241,8 @@ fun DogInfo(dog: Dog, upPress: () -> Unit, favoritePress: () -> Unit) {
 fun AdoptButton(modifier: Modifier = Modifier) {
     Surface(modifier = modifier, elevation = 4.dp, shape = shapes.large) {
         Box(
-            contentAlignment = Alignment.Center, modifier = Modifier
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
                 .clickable(onClick = {})
                 .background(blue500)
         ) {
@@ -297,12 +313,14 @@ fun DetailsTopBar(
                 val icon =
                     if (dog.inFavorite) R.drawable.ic_favorite_24dp else R.drawable.ic_favorite_border_24dp
                 Icon(
-                    painterResource(id = icon), contentDescription = null, modifier = Modifier
+                    painterResource(id = icon), contentDescription = null,
+                    modifier = Modifier
                         .clickable(onClick = favoritePress)
                         .weight(1f)
                         .width(48.dp)
                         .height(48.dp)
-                        .padding(12.dp), tint = blue500
+                        .padding(12.dp),
+                    tint = blue500
                 )
             }
             AnimatedVisibility(visible = active) {
@@ -316,7 +334,8 @@ fun DetailsTopBar(
 fun ShelterContact(contact: ShelterContact, modifier: Modifier = Modifier) {
     Column {
         Text(
-            "Contacts", style = typography.caption.copy(
+            "Contacts",
+            style = typography.caption.copy(
                 fontSize = 12.sp,
                 lineHeight = 14.sp,
                 color = grayText
@@ -347,7 +366,8 @@ fun ShelterAgentInfo(contact: ShelterContact, modifier: Modifier) {
         Spacer(modifier = Modifier.width(24.dp))
         Column(modifier = Modifier.weight(2f), verticalArrangement = Arrangement.Center) {
             Text(
-                contact.name, style = typography.h6.copy(
+                contact.name,
+                style = typography.h6.copy(
                     fontSize = 16.sp,
                     lineHeight = 19.sp,
                     color = blackText
@@ -355,7 +375,8 @@ fun ShelterAgentInfo(contact: ShelterContact, modifier: Modifier) {
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                "Shelter’s representative", style = typography.caption.copy(
+                "Shelter’s representative",
+                style = typography.caption.copy(
                     fontSize = 12.sp,
                     lineHeight = 14.sp,
                     color = grayText
